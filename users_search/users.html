@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>RealTime Chat</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../entry_point/base_style.css">
+  <link rel="stylesheet" href="users_style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 </head>
 <body>
@@ -13,7 +14,7 @@
   <section class="users">
     <header>
       <div class="content">
-        <img src="#" alt="">
+        <img src="../images/no-profile-picture-icon.svg" alt="">
         <div class="details">
           <span>Coding Simo</span>
           <p>Active now</p>
@@ -22,8 +23,11 @@
       <a href="#" class="logout">Logout</a>
     </header>
     <div class="search">
-      <span class="text">Select an user to start chat</span>
-      <input type="text" placeholder="Enter name to search">
+      <span class="text">Select a user to start chat</span>
+      <input type="text" placeholder="Enter name to search...">
+      <button>
+        <i class="fas fa-search"></i>
+      </button>
     </div>
   </section>
 </div>
