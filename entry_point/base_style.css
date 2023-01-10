@@ -48,6 +48,8 @@ body {
     border-radius: 5px;
     margin-bottom: 10px;
     border-bottom: 2px solid rgba(245, 198, 203, 0.92);
+    /*this peace of code hides the error message*/
+    display: none;
 }
 
 .form form .name-details {
