@@ -45,7 +45,7 @@
 
             <div class="link">
                 Already signed up?
-                <a href="#">Login now</a>
+                <a href="login.php">Login now</a>
             </div>
 
         </section>
