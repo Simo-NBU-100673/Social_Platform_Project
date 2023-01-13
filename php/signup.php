@@ -5,6 +5,8 @@
     //get connection to database from config.php
     include_once 'config.php';
 
+    //TODO NEEDS TO BE REFACTORED
+
     //get the data from the request
     $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
     $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
