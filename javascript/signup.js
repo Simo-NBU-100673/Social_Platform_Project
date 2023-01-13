@@ -25,7 +25,7 @@ form.addEventListener("submit", (e) => {
             if (xhrObject.status === 200) {
                 let data = xhrObject.response;
                 if(data === "success") {
-                    location.href = "users.php";
+                    location.href = "users_search/users.php";
                 } else {
                     errorMessage.innerHTML = data;
                     errorMessage.style.display = "block";

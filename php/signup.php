@@ -18,10 +18,11 @@
             $sql = mysqli_query($conn, "SELECT email FROM users WHERE email = '{$email}'");
             if(mysqli_num_rows($sql) === 0) {
 
-                if(isset($_FILES['image'])){
-                    $img_name = $_FILES['image']['name'];
-                    $img_type = $_FILES['image']['type'];
-                    $tmp_name = $_FILES['image']['tmp_name'];
+                if(strlen($password) > 5 && strlen($password) < 255){
+                    if(isset($_FILES['image'])){
+                        $img_name = $_FILES['image']['name'];
+                        $img_type = $_FILES['image']['type'];
+                        $tmp_name = $_FILES['image']['tmp_name'];
 
                         $img_explode = explode('.', $img_name);
                         $img_ext = end($img_explode);
@@ -62,8 +63,15 @@
                             echo "Please select an image file - jpeg, png, jpg\n Extension: .$img_ext is not supported";
                         }
 
+                    }else{
+                        echo "Please select an image file!";
+                    }
                 }else{
-                    echo "Please select an image file!";
+                    if(strlen($password) <= 5){
+                        echo "Password must be greater than 5 characters";
+                    }else{
+                        echo "Password must be less than 255 characters";
+                    }
                 }
 
             }else{
