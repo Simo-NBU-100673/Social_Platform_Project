@@ -1,4 +1,12 @@
 <?php
+    session_start();
+    //if no session with unique_id(user logged in) is set, redirect to login page
+    if(!isset($_SESSION['unique_id'])){
+        header("location: login.php");
+    }
+?>
+
+<?php
     include_once "header.php";
 ?>
 <body>
