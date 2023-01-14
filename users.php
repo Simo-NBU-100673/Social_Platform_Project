@@ -7,20 +7,42 @@
 ?>
 
 <?php
+//    LOGIC
+    //include DB configuration file
+    include_once "php/config.php";
+    $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
+    if(mysqli_num_rows($sql) > 0){
+        $row = mysqli_fetch_assoc($sql);
+    }
+    //TODO throw and handle exception somehow if user is not found
+
+    $name = $row['first_name'] . " " . $row['last_name'];
+    $status = $row['status'];
+
+    $img_src = "images/no-profile-picture-icon.svg";
+    if(!empty($row['img'])) {
+        $img_src = "php/images/" . $row['img'];
+
+        //check if file exists
+        if(!file_exists($img_src)) {
+            $img_src = "images/no-profile-picture-icon.svg";
+        }
+    }
+?>
+
+<?php
     include_once "header.php";
 ?>
+
 <body>
 <div class="wrapper">
   <section class="users">
     <header>
-        <?php
-
-        ?>
       <div class="content">
-        <img src="images/no-profile-picture-icon.svg" alt="">
+        <img src="<?php echo $img_src?>" alt="">
         <div class="details">
-          <span>Coding Simo</span>
-          <p>Active now</p>
+          <span><?php echo $name?></span>
+          <p><?php echo $status ?></p>
         </div>
       </div>
       <a href="#" class="logout">Logout</a>
@@ -33,102 +55,8 @@
       </button>
     </div>
     <div class="users-list">
-      <a href="#">
-        <div class="content">
-          <img src="images/no-profile-picture-icon.svg" alt="">
-          <div class="details">
-            <span>Coding Simo 1</span>
-            <p>This is test</p>
-          </div>
-        </div>
-        <div class="status-dot">
-          <i class="fas fa-circle"></i>
-        </div>
-      </a>
-      <a href="#">
-        <div class="content">
-          <img src="images/no-profile-picture-icon.svg" alt="">
-          <div class="details">
-            <span>Coding Simo 2</span>
-            <p>This is test</p>
-          </div>
-        </div>
-        <div class="status-dot">
-          <i class="fas fa-circle"></i>
-        </div>
-      </a>
-      <a href="#">
-        <div class="content">
-          <img src="images/no-profile-picture-icon.svg" alt="">
-          <div class="details">
-            <span>Coding Simo 2</span>
-            <p>This is test</p>
-          </div>
-        </div>
-        <div class="status-dot">
-          <i class="fas fa-circle"></i>
-        </div>
-      </a>
-      <a href="#">
-        <div class="content">
-          <img src="images/no-profile-picture-icon.svg" alt="">
-          <div class="details">
-            <span>Coding Simo 2</span>
-            <p>This is test</p>
-          </div>
-        </div>
-        <div class="status-dot">
-          <i class="fas fa-circle"></i>
-        </div>
-      </a>
-      <a href="#">
-        <div class="content">
-          <img src="images/no-profile-picture-icon.svg" alt="">
-          <div class="details">
-            <span>Coding Simo 2</span>
-            <p>This is test</p>
-          </div>
-        </div>
-        <div class="status-dot">
-          <i class="fas fa-circle"></i>
-        </div>
-      </a>
-      <a href="#">
-        <div class="content">
-          <img src="images/no-profile-picture-icon.svg" alt="">
-          <div class="details">
-            <span>Coding Simo 2</span>
-            <p>This is test</p>
-          </div>
-        </div>
-        <div class="status-dot">
-          <i class="fas fa-circle"></i>
-        </div>
-      </a>
-      <a href="#">
-        <div class="content">
-          <img src="images/no-profile-picture-icon.svg" alt="">
-          <div class="details">
-            <span>Coding Simo 2</span>
-            <p>This is test</p>
-          </div>
-        </div>
-        <div class="status-dot">
-          <i class="fas fa-circle"></i>
-        </div>
-      </a>
-      <a href="#">
-        <div class="content">
-          <img src="images/no-profile-picture-icon.svg" alt="">
-          <div class="details">
-            <span>Coding Simo 2</span>
-            <p>This is test</p>
-          </div>
-        </div>
-        <div class="status-dot">
-          <i class="fas fa-circle"></i>
-        </div>
-      </a>
+<!--        HERE MUST BE THE LIST OF USERS-->
+
     </div>
   </section>
 </div>
