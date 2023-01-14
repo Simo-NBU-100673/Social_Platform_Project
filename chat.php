@@ -56,72 +56,7 @@ include_once "header.php";
         </header>
 
         <div class="chat-box">
-            <div class="chat outgoing">
-                <div class="details">
-                    <p>This is a message</p>
-                </div>
-            </div>
-            <div class="chat incoming">
-                <img src="images/no-profile-picture-icon.svg" alt="">
-                <div class="details">
-                    <p>This is another message</p>
-                </div>
-            </div>
-            <div class="chat outgoing">
-                <div class="details">
-                    <p>This is a message</p>
-                </div>
-            </div>
-            <div class="chat incoming">
-                <img src="images/no-profile-picture-icon.svg" alt="">
-                <div class="details">
-                    <p>This is another message</p>
-                </div>
-            </div>
-            <div class="chat outgoing">
-                <div class="details">
-                    <p>This is a message</p>
-                </div>
-            </div>
-            <div class="chat incoming">
-                <img src="images/no-profile-picture-icon.svg" alt="">
-                <div class="details">
-                    <p>This is another message</p>
-                </div>
-            </div>
-            <div class="chat outgoing">
-                <div class="details">
-                    <p>This is a message</p>
-                </div>
-            </div>
-            <div class="chat incoming">
-                <img src="images/no-profile-picture-icon.svg" alt="">
-                <div class="details">
-                    <p>This is another message</p>
-                </div>
-            </div>
-            <div class="chat outgoing">
-                <div class="details">
-                    <p>This is a message</p>
-                </div>
-            </div>
-            <div class="chat incoming">
-                <img src="images/no-profile-picture-icon.svg" alt="">
-                <div class="details">
-                    <p>This is another message</p>
-                </div>
-            </div>
-            <div class="chat outgoing">
-                <div class="details">
-                    <p>This is a message</p>
-                </div>
-            </div>
-            <div class="chat incoming">
-                <img src="images/no-profile-picture-icon.svg" alt="">
-                <div class="details">
-                    <p>This is another message</p>
-                </div>
-            </div>
+<!--            Here will come the messages from AJAX-->
         </div>
 
         <form action="#" class="typing-area" autocomplete="off">

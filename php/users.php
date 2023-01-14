@@ -1,5 +1,9 @@
 <?php
  session_start();
+ if(!isset($_SESSION['unique_id'])){
+     header("location: login.php");
+ }
+
  $outgoing_id = $_SESSION['unique_id'];
 
  include_once "config.php";
