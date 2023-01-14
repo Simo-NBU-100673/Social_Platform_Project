@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>RealTime Chat</title>
-  <link rel="stylesheet" href="../base_style.css">
-  <link rel="stylesheet" href="users_style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-</head>
+<?php
+    include_once "header.php";
+?>
 <body>
 <div class="wrapper">
   <section class="users">
     <header>
+        <?php
+
+        ?>
       <div class="content">
-        <img src="../images/no-profile-picture-icon.svg" alt="">
+        <img src="images/no-profile-picture-icon.svg" alt="">
         <div class="details">
           <span>Coding Simo</span>
           <p>Active now</p>
@@ -32,7 +27,7 @@
     <div class="users-list">
       <a href="#">
         <div class="content">
-          <img src="../images/no-profile-picture-icon.svg" alt="">
+          <img src="images/no-profile-picture-icon.svg" alt="">
           <div class="details">
             <span>Coding Simo 1</span>
             <p>This is test</p>
@@ -44,7 +39,7 @@
       </a>
       <a href="#">
         <div class="content">
-          <img src="../images/no-profile-picture-icon.svg" alt="">
+          <img src="images/no-profile-picture-icon.svg" alt="">
           <div class="details">
             <span>Coding Simo 2</span>
             <p>This is test</p>
@@ -56,7 +51,7 @@
       </a>
       <a href="#">
         <div class="content">
-          <img src="../images/no-profile-picture-icon.svg" alt="">
+          <img src="images/no-profile-picture-icon.svg" alt="">
           <div class="details">
             <span>Coding Simo 2</span>
             <p>This is test</p>
@@ -68,7 +63,7 @@
       </a>
       <a href="#">
         <div class="content">
-          <img src="../images/no-profile-picture-icon.svg" alt="">
+          <img src="images/no-profile-picture-icon.svg" alt="">
           <div class="details">
             <span>Coding Simo 2</span>
             <p>This is test</p>
@@ -80,7 +75,7 @@
       </a>
       <a href="#">
         <div class="content">
-          <img src="../images/no-profile-picture-icon.svg" alt="">
+          <img src="images/no-profile-picture-icon.svg" alt="">
           <div class="details">
             <span>Coding Simo 2</span>
             <p>This is test</p>
@@ -92,7 +87,7 @@
       </a>
       <a href="#">
         <div class="content">
-          <img src="../images/no-profile-picture-icon.svg" alt="">
+          <img src="images/no-profile-picture-icon.svg" alt="">
           <div class="details">
             <span>Coding Simo 2</span>
             <p>This is test</p>
@@ -104,7 +99,7 @@
       </a>
       <a href="#">
         <div class="content">
-          <img src="../images/no-profile-picture-icon.svg" alt="">
+          <img src="images/no-profile-picture-icon.svg" alt="">
           <div class="details">
             <span>Coding Simo 2</span>
             <p>This is test</p>
@@ -116,7 +111,7 @@
       </a>
       <a href="#">
         <div class="content">
-          <img src="../images/no-profile-picture-icon.svg" alt="">
+          <img src="images/no-profile-picture-icon.svg" alt="">
           <div class="details">
             <span>Coding Simo 2</span>
             <p>This is test</p>
@@ -130,6 +125,6 @@
   </section>
 </div>
 
-<script src="../javascript/users.js"></script>
+<script src="javascript/users.js"></script>
 </body>
 </html>

@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>RealTime Chat</title>
-    <link rel="stylesheet" href="../base_style.css">
-    <link rel="stylesheet" href="../users_search/users_style.css">
-    <link rel="stylesheet" href="../chat/chat.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-</head>
+<?php
+include_once "header.php";
+?>
 <body>
 <div class="wrapper">
     <section class="chat-area">
@@ -17,7 +8,7 @@
             <a href="#" class="back-icon">
                 <i class="fas fa-arrow-left"></i>
             </a>
-            <img src="../images/no-profile-picture-icon.svg" alt="">
+            <img src="images/no-profile-picture-icon.svg" alt="">
             <div class="details">
                 <span>Coding Simo</span>
                 <p>Active now</p>
@@ -32,7 +23,7 @@
                 </div>
             </div>
             <div class="chat incoming">
-                <img src="../images/no-profile-picture-icon.svg" alt="">
+                <img src="images/no-profile-picture-icon.svg" alt="">
                 <div class="details">
                     <p>This is another message</p>
                 </div>
@@ -43,7 +34,7 @@
                 </div>
             </div>
             <div class="chat incoming">
-                <img src="../images/no-profile-picture-icon.svg" alt="">
+                <img src="images/no-profile-picture-icon.svg" alt="">
                 <div class="details">
                     <p>This is another message</p>
                 </div>
@@ -54,7 +45,7 @@
                 </div>
             </div>
             <div class="chat incoming">
-                <img src="../images/no-profile-picture-icon.svg" alt="">
+                <img src="images/no-profile-picture-icon.svg" alt="">
                 <div class="details">
                     <p>This is another message</p>
                 </div>
@@ -65,7 +56,7 @@
                 </div>
             </div>
             <div class="chat incoming">
-                <img src="../images/no-profile-picture-icon.svg" alt="">
+                <img src="images/no-profile-picture-icon.svg" alt="">
                 <div class="details">
                     <p>This is another message</p>
                 </div>
@@ -76,7 +67,7 @@
                 </div>
             </div>
             <div class="chat incoming">
-                <img src="../images/no-profile-picture-icon.svg" alt="">
+                <img src="images/no-profile-picture-icon.svg" alt="">
                 <div class="details">
                     <p>This is another message</p>
                 </div>
@@ -87,7 +78,7 @@
                 </div>
             </div>
             <div class="chat incoming">
-                <img src="../images/no-profile-picture-icon.svg" alt="">
+                <img src="images/no-profile-picture-icon.svg" alt="">
                 <div class="details">
                     <p>This is another message</p>
                 </div>
