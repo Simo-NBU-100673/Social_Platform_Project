@@ -11,9 +11,11 @@
     //include DB configuration file
     include_once "php/config.php";
     $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
-    if(mysqli_num_rows($sql) > 0){
-        $row = mysqli_fetch_assoc($sql);
+    if(mysqli_num_rows($sql) <= 0){
+        //TODO make something more convenient for user
+        header("location: login.php");
     }
+    $row = mysqli_fetch_assoc($sql);
     //TODO throw and handle exception somehow if user is not found
 
     $name = $row['first_name'] . " " . $row['last_name'];
