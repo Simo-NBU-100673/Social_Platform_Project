@@ -11,21 +11,24 @@ searchBtn.onclick = () => {
 
 searchBar.onkeyup = () => {
     let searchTerm = searchBar.value;
-    if (searchTerm === "") {
-        return;
+    if (searchTerm !== "") {
+        searchBar.classList.add("active");
+    }else {
+        searchBar.classList.remove("active");
     }
 
     let xhrObject = new XMLHttpRequest();
-    xhrObject.open("GET", "php/search.php", true);
+    xhrObject.open("POST", "php/search.php", true);
 
     //send the GET request
-    xhrObject.send();
+    xhrObject.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhrObject.send("searchTerm=" + searchTerm);
 
     // Response from send GET request
     xhrObject.onload = () => {
         if (xhrObject.readyState === XMLHttpRequest.DONE) {
             if (xhrObject.status === 200) {
-                //TODO handle the response somehow
+                usersList.innerHTML = xhrObject.response;
             }
         }
     }
@@ -53,7 +56,9 @@ function getAllUsers() {
     xhrObject.onload = () => {
         if (xhrObject.readyState === XMLHttpRequest.DONE) {
             if (xhrObject.status === 200) {
-                usersList.innerHTML = xhrObject.response;
+                if (!searchBar.classList.contains("active")) {
+                    usersList.innerHTML = xhrObject.response;
+                }
             }
         }
     }
