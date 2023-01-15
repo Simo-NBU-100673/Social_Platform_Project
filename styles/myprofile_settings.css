@@ -1,0 +1,90 @@
+.form form .field.button input{
+    transition: all 0.4s ease;
+}
+
+.form form .field.button input.save-changes:hover{
+    color: rgb(37, 190, 52);
+}
+
+.form form .field.button input.delete-account:hover{
+    color: red;
+}
+
+.form form .field.button.settings-buttons{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.form form .field.button.settings-buttons input{
+    width: 100%;
+}
+
+.form form .field.button.settings-buttons input.save-changes {
+    margin-right: 5px;
+}
+
+.form form .field.button.settings-buttons input.delete-account {
+    margin-left: 5px;
+}
+
+.image-container{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: left;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image-container img{
+    object-fit: contain;
+    border-radius: 0%;
+}
+
+.image-container img:hover + label{
+    display: block;
+}
+
+.image-container img + label:hover{
+    display: block;
+}
+
+.image-container label{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background: rgba(0,0,0,0.5);
+    color: #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    height: 40%;
+    margin-top: 25%;
+    font-size: 13px;
+}
+
+.image-names-container {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.image-names-container .name-details {
+    width: calc(100% - 145px);
+}
+
+.image-names-container .name-details .field.input{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}

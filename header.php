@@ -17,4 +17,7 @@
 
     <!--Style sheet for chat.php-->
     <link rel="stylesheet" href="styles/chat.css">
+
+    <!--Style sheet for myprofile_settings.php-->
+    <link rel="stylesheet" href="styles/myprofile_settings.css">
 </head>

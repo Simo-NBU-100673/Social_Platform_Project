@@ -44,15 +44,24 @@ include_once "header.php";
             <header>Your Profile Information</header>
             <form enctype="multipart/form-data">
                 <div class="error-message"></div>
+                <div class="image-names-container">
+                <div class="image-container">
+                    <img src="php/images/<?php echo $row['img']?>" alt="">
+                    <label for="image">Change image</label>
+                    <input id="image" type="file" style="display:none;" name="image" accept="image/png, image/jpeg, image/jpg">
+                </div>
                 <div class="name-details">
                     <div class="field input">
-                        <label for="first_name">First Name</label>
-                        <input id="first_name" type="text" name="first_name" value="<?php echo $first_name?>">
+                        <div class="first-name container">
+                            <label for="first_name">First Name</label>
+                            <input id="first_name" type="text" name="first_name" value="<?php echo $first_name?>">
+                        </div>
+                        <div class="last-name container">
+                            <label for="last_name">Last Name</label>
+                            <input id="last_name" type="text" name="last_name" value="<?php echo $last_name?>">
+                        </div>
                     </div>
-                    <div class="field input">
-                        <label for="last_name">Last Name</label>
-                        <input id="last_name" type="text" name="last_name" value="<?php echo $last_name?>">
-                    </div>
+                </div>
                 </div>
                 <div class="field input">
                     <label for="email_address">Email Address</label>
@@ -63,12 +72,8 @@ include_once "header.php";
                     <input id="password" type="password" name="password" value="<?php echo $password?>">
                     <i class="fas fa-eye"></i>
                 </div>
-                <div class="field image">
-                    <label>Your image</label>
-                    <input  type="file" name="image">
-                </div>
-                <div class="field button">
-                    <input type="submit" value="Save changes">
+                <div class="field button settings-buttons">
+                    <input type="submit" class="save-changes" value="Save changes">
                     <input type="button" class="delete-account" value="Delete Account">
                 </div>
             </form>
@@ -78,6 +83,7 @@ include_once "header.php";
 
     <script src="javascript/pass-show-hide.js"></script>
     <!-- <script src="javascript/delete-account.js"></script>
-    <script src="javascript/change-account.js"></script> -->
+    <script src="javascript/save-changed-account.js"></script>
+    -->
 </body>
 </html>

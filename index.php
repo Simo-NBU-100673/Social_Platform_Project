@@ -38,7 +38,7 @@ include_once "header.php";
                 </div>
                 <div class="field image">
                     <label>Select image</label>
-                    <input  type="file" name="image">
+                    <input  type="file" name="image" accept="image/png, image/jpeg, image/jpg">
                 </div>
                 <div class="field button">
                     <input type="submit" value="Continue to Chat">
