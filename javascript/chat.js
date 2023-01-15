@@ -1,6 +1,6 @@
 let form = document.querySelector(".typing-area");
 let inputField = form.querySelector("input.input-field");
-let chat_box = document.querySelector(".chat-area .chat-box");
+const chat_box = document.querySelector(".chat-area .chat-box");
 
 form.addEventListener("submit", (e) => {
     // if the form gets submitted, then page doesn't refresh
@@ -22,11 +22,24 @@ form.addEventListener("submit", (e) => {
         if (xhrObject.readyState === XMLHttpRequest.DONE) {
             if (xhrObject.status === 200) {
                 inputField.value = "";
+
+                //This will return the scrollbar to the bottom of the chat box
+                chat_box.scrollTop = chat_box.scrollHeight;
             }
         }
     }
 
 });
+
+//activate auto scroll when the users scroll is at the bottom of the chat box
+//and deactivate auto scroll when the user scrolls up
+chat_box.onscroll = () => {
+    if (chat_box.scrollTop + chat_box.clientHeight >= chat_box.scrollHeight) {
+        chat_box.classList.remove("active");
+    }else{
+        chat_box.classList.add("active");
+    }
+}
 
 //TODO somehow when a user receives a new message to scroll down to the bottom of the chat box
 //TODO somehow to make the chat box scroll down to the bottom when the user sends a message
@@ -36,6 +49,9 @@ form.addEventListener("submit", (e) => {
 window.onload = () => {
     //This will call the getMessages function only the first time when page loaded
     getMessages();
+
+    //This will return the scrollbar to the bottom of the chat box
+    chat_box.scrollTop = chat_box.scrollHeight;
 
     //every 0.2s refresh the messages that are displayed after loading the page
     setInterval(getMessages, 400);
@@ -58,6 +74,12 @@ function getMessages() {
         if (xhrObject.readyState === XMLHttpRequest.DONE) {
             if (xhrObject.status === 200) {
                 chat_box.innerHTML = xhrObject.response;
+
+                //if the user scrolls up then don't scroll down to the
+                //bottom of the chat box when a new message is received
+                if (!chat_box.classList.contains("active")) {
+                    chat_box.scrollTop = chat_box.scrollHeight;
+                }
             }
         }
     }
