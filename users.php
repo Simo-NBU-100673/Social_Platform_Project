@@ -40,6 +40,7 @@ include_once "header.php";
 <div class="wrapper">
   <section class="users">
     <header>
+    <a href="myprofile_settings.php?user_id=<?php echo $row['unique_id']?>">
       <div class="content">
         <img src="<?php echo $img_src?>" alt="">
         <div class="details">
@@ -47,6 +48,7 @@ include_once "header.php";
           <p><?php echo $status ?></p>
         </div>
       </div>
+    </a>
       <a href="php/logout.php?user_id=<?php echo $row['unique_id']?>" class="logout">Logout</a>
     </header>
     <div class="search">
