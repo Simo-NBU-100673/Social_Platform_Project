@@ -1,3 +1,4 @@
+let limit = 20; //number of messages to be displayed at a time
 let form = document.querySelector(".typing-area");
 let inputField = form.querySelector("input.input-field");
 const chat_box = document.querySelector(".chat-area .chat-box");
@@ -35,13 +36,19 @@ form.addEventListener("submit", (e) => {
 //and deactivate auto scroll when the user scrolls up
 chat_box.onscroll = () => {
     if (chat_box.scrollTop + chat_box.clientHeight >= chat_box.scrollHeight) {
+        //This is when the user scrolls down to the bottom of the chat box
         chat_box.classList.remove("active");
     }else{
+
+        //This is when the user scrolls up to the top of the chat box
+        if (chat_box.scrollTop == 0) {
+            limit+=10;
+        }
+
+        //This is when the user scrolls up and it is not at the bottom of the chat box
         chat_box.classList.add("active");
     }
 }
-
-//TODO show only 20 messages and in the user scrolls up then load more messages
 
 //When the document is loaded then some messages will be displayed and will start interval to listen for new messages
 window.onload = () => {
@@ -63,6 +70,9 @@ function getMessages() {
     // send the form data through ajax to php
     let form_current_state = document.querySelector("form.typing-area");
     let formData = new FormData(form_current_state); // creating new formData object
+
+    // attach the limit variable to the formData object
+    formData.append("limit", limit);
 
     //send the GET request
     xhrObject.send(formData);

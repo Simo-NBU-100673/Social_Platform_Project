@@ -7,19 +7,16 @@
     include_once "config.php";
     $sender_id = mysqli_real_escape_string($conn, $_POST['sender_id']);
     $receiver_id = mysqli_real_escape_string($conn, $_POST['receiver_id']);
+    
+    //if user scrolls to the top of the chat box, load more messages
+    $limit = mysqli_real_escape_string($conn, $_POST['limit']);
 
-    $sql = mysqli_query($conn, "SELECT * FROM messages
+    $sql = mysqli_query($conn, "SELECT * FROM (SELECT * FROM messages
                                 LEFT JOIN users ON users.unique_id = messages.sender_id
                                 WHERE (sender_id = {$sender_id} AND receiver_id = {$receiver_id})
                                 OR (sender_id = {$receiver_id} AND receiver_id = {$sender_id})
-                                ORDER BY msg_id");
-
-//If table were connected must happend with query:
-//$sql = mysqli_query($conn, "SELECT * FROM messages
-//                                LEFT JOIN users ON users.unique_id = messages.sender_id
-//                                WHERE (sender_id = {$sender_id} AND receiver_id = {$receiver_id})
-//                                OR (sender_id = {$receiver_id} AND receiver_id = {$sender_id})
-//                                ORDER BY msg_id");
+                                ORDER BY msg_id DESC LIMIT {$limit})last_messages
+                                ORDER BY msg_id ASC");
 
     if(mysqli_num_rows($sql) > 0) {
         $output = "";
