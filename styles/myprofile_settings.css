@@ -131,11 +131,11 @@
 .form form .notification-message {
     color: #178f19;
     background: #d7f8db;
+    border-bottom: 2px solid rgba(198, 245, 203, 0.92);
     padding: 8px 10px;
     text-align: center;
     border-radius: 5px;
     margin-bottom: 10px;
-    border-bottom: 2px solid rgba(198, 245, 203, 0.92);
     /*this peace of code hides the error message*/
     display: none;
 }

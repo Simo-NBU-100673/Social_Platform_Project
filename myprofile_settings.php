@@ -39,7 +39,7 @@ include_once "header.php";
 
 <body>
     <div class="wrapper">
-        <section class="form signup">
+        <section class="form changes">
             <div class="head">
                 <a href="users.php" class="back-icon">
                     <i class="fas fa-arrow-left"></i>
@@ -86,8 +86,6 @@ include_once "header.php";
     </div>
 
     <script src="javascript/pass-show-hide.js"></script>
-    <!-- <script src="javascript/delete-account.js"></script>
-    <script src="javascript/save-changed-account.js"></script>
-    -->
+    <script src="javascript/myprofile-settings.js"></script>
 </body>
 </html>
