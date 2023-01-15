@@ -28,6 +28,10 @@ form.addEventListener("submit", (e) => {
 
 });
 
+//TODO somehow when a user receives a new message to scroll down to the bottom of the chat box
+//TODO somehow to make the chat box scroll down to the bottom when the user sends a message
+//TODO show only 20 messages and in the user scrolls up then load more messages
+
 //When the document is loaded then some messages will be displayed and will start interval to listen for new messages
 window.onload = () => {
     //This will call the getMessages function only the first time when page loaded
