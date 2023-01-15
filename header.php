@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
     <!--Style sheet for users.php-->
-    <link rel="stylesheet" href="users_style.css">
+    <link rel="stylesheet" href="styles/users_style.css">
 
     <!--Style sheet for index.css(signup) and login.css(login)-->
-    <link rel="stylesheet" href="base_style.css">
+    <link rel="stylesheet" href="styles/base_style.css">
 
     <!--Style sheet for chat.php-->
-    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="styles/chat.css">
 </head>

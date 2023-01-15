@@ -7,7 +7,7 @@
 ?>
 
 <?php
-include_once "styles/header.php";
+include_once "header.php";
 ?>
 
 <body>
