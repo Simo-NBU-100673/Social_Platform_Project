@@ -137,6 +137,6 @@
     color: #468669;
 }
 
-.users-list a .status-dot .offline{
+.users-list a .status-dot.offline{
     color: #cccccc;
 }

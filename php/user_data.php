@@ -1,10 +1,16 @@
 <?php
+     if(!isset($_SESSION['unique_id'])){
+         header("location: login.php");
+     }
+    
+     $current_user_id = $_SESSION['unique_id'];
+
     while ($row = mysqli_fetch_assoc($sql)) {
       //gets all messages between the current user and the user in the loop
       $sql2 = "SELECT * FROM messages
                       WHERE (sender_id = {$row['unique_id']} 
-                      AND receiver_id = {$outgoing_id})
-                      OR (sender_id = {$outgoing_id} 
+                      AND receiver_id = {$current_user_id})
+                      OR (sender_id = {$current_user_id} 
                       AND receiver_id = {$row['unique_id']})
                       ORDER BY msg_id DESC LIMIT 1";
       
@@ -19,7 +25,7 @@
       }
 
       //if the last message was from the current user then we add You: to the start
-      if(isset($row2['sender_id']) && $row2['sender_id'] == $outgoing_id){
+      if(isset($row2['sender_id']) && $row2['sender_id'] == $current_user_id){
         $last_message = "You: " . $last_message;
       }
 
@@ -28,6 +34,11 @@
         $last_message = substr($last_message, 0, 28) . "...";
       }
 
+      //if the user is online then we make the dot green
+      $status = "";
+      if($row['status'] != "Active now"){
+        $status = "offline";
+      }
 
         $output .= "<a href='chat.php?user_id={$row['unique_id']}'>
              <div class='content'>
@@ -37,7 +48,7 @@
                  <p>$last_message</p>
                </div>
              </div>
-             <div class='status-dot'><i class='fas fa-circle'></i></div>
+             <div class='status-dot $status'><i class='fas fa-circle'></i></div>
            </a>";
     }
 ?>
