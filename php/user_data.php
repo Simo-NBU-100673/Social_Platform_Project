@@ -1,11 +1,40 @@
 <?php
     while ($row = mysqli_fetch_assoc($sql)) {
+      //gets all messages between the current user and the user in the loop
+      $sql2 = "SELECT * FROM messages
+                      WHERE (sender_id = {$row['unique_id']} 
+                      AND receiver_id = {$outgoing_id})
+                      OR (sender_id = {$outgoing_id} 
+                      AND receiver_id = {$row['unique_id']})
+                      ORDER BY msg_id DESC LIMIT 1";
+      
+      $query2 = mysqli_query($conn, $sql2);
+      $row2 = mysqli_fetch_assoc($query2);
+
+      //gets the last massage between the current user
+      //and the user in the loop if there is one
+      $last_message = "No message available";
+      if(mysqli_num_rows($query2) > 0){
+        $last_message = $row2['message'];
+      }
+
+      //if the last message was from the current user then we add You: to the start
+      if($row2['sender_id'] == $outgoing_id){
+        $last_message = "You: " . $last_message;
+      }
+
+      //if the last message is longer than 28 characters then we cut it
+      if(strlen($last_message) > 28){
+        $last_message = substr($last_message, 0, 28) . "...";
+      }
+
+
         $output .= "<a href='chat.php?user_id={$row['unique_id']}'>
              <div class='content'>
                <img src='php/images/{$row['img']}' alt=''>
                <div class='details'>
                  <span>{$row['first_name']} {$row['last_name']}</span>
-                 <p>{$row['status']}</p>
+                 <p>$last_message</p>
                </div>
              </div>
              <div class='status-dot'><i class='fas fa-circle'></i></div>

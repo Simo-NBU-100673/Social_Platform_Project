@@ -15,6 +15,7 @@ searchBar.onkeyup = () => {
         searchBar.classList.add("active");
     }else {
         searchBar.classList.remove("active");
+        return;
     }
 
     let xhrObject = new XMLHttpRequest();
