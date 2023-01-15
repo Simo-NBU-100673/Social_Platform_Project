@@ -19,7 +19,7 @@
       }
 
       //if the last message was from the current user then we add You: to the start
-      if($row2['sender_id'] == $outgoing_id){
+      if(isset($row2['sender_id']) && $row2['sender_id'] == $outgoing_id){
         $last_message = "You: " . $last_message;
       }
 
