@@ -1,4 +1,12 @@
 <?php
+ session_start();
+ //if session with unique_id(user logged in) is set, redirect to users page
+ if(isset($_SESSION['unique_id'])){
+     header("location: users.php");
+ }
+?>
+
+<?php
 include_once "header.php";
 ?>
 <body>

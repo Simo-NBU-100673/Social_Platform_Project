@@ -21,7 +21,16 @@
         exit();
     }
 
+
     $row = mysqli_fetch_assoc($sql);
+
+    //Makes the status to be active now
+    $sql2 = mysqli_query($conn, "UPDATE users SET status = 'Active now' WHERE unique_id = {$row['unique_id']}");
+    if(!$sql2){
+        echo "DB Error: Something went wrong";
+        exit();
+    }
+
     $_SESSION['unique_id'] = $row['unique_id'];
     echo "success";
 ?>
