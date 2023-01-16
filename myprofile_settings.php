@@ -47,6 +47,7 @@ include_once "header.php";
                 <header>Your Profile Information</header>
             </div>
             <form enctype="multipart/form-data">
+                <div class="error-message"></div>
                 <div class="notification-message"></div>
                 <div class="image-names-container">
                 <div class="image-container">
