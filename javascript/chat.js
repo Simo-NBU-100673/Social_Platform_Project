@@ -43,6 +43,8 @@ chat_box.onscroll = () => {
         //This is when the user scrolls up to the top of the chat box
         if (chat_box.scrollTop == 0) {
             limit+=10;
+            //scroll dawn a little bit to show the new messages
+            chat_box.scrollTop = 20;
         }
 
         //This is when the user scrolls up and it is not at the bottom of the chat box
