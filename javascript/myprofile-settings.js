@@ -37,10 +37,10 @@ form.addEventListener("submit", (e) => {
 
                     notificationMessage.innerHTML = "Profile updated successfully";
                     notificationMessage.style.display = "block";
-                    //after 10 seconds, the notification message will disappear
+                    //after 5 seconds, the notification message will disappear
                     setTimeout(() => {
                         notificationMessage.style.display = "none";
-                    }, 10000);
+                    }, 5000);
 
                 } else {
 
@@ -48,7 +48,7 @@ form.addEventListener("submit", (e) => {
                     errorMessage.style.display = "block";
                     setTimeout(() => {
                         errorMessage.style.display = "none";
-                    }, 10000);
+                    }, 5000);
 
                 }
             }
