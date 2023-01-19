@@ -40,9 +40,19 @@
         $status = "offline";
       }
 
+      //we see if the folder with images there is an image with the name of the image in the
+      //database by the coresponding user and if there is not any image in the specific folder
+      //with that name we send the no image path to the image wich indicates that there is
+      //not an uploaded image for this user
+      $no_image_path = "images/no-profile-picture-icon.svg";
+      $image_path = "php/images/" . $row['img'];
+      if(!file_exists("images/" . $row['img'])){
+        $image_path = $no_image_path;
+      }
+
         $output .= "<a href='chat.php?user_id={$row['unique_id']}'>
              <div class='content'>
-               <img src='php/images/{$row['img']}' alt=''>
+               <img src='{$image_path}' alt=''>
                <div class='details'>
                  <span>{$row['first_name']} {$row['last_name']}</span>
                  <p>$last_message</p>
