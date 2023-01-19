@@ -86,6 +86,18 @@ include_once "header.php";
         </section>
     </div>
 
+    <div class="pop-up">
+        <div class="pop-up-container">
+            <div class="pop-up-header">
+                <h3>Are you sure you want to delete your account?</h3>
+            </div>
+            <div class="pop-up-buttons">
+                <button class="cancel"><i class="fas fa-times"></i></button>
+                <button class="confirm"><i class="fas fa-check"></i></button>
+            </div>
+        </div>
+    </div>
+
     <script src="javascript/pass-show-hide.js"></script>
     <script src="javascript/myprofile-settings.js"></script>
 </body>

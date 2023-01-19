@@ -12,6 +12,21 @@ img_input.addEventListener("change", function(event) {
 let form = document.querySelector(".changes form");
 let notificationMessage = document.querySelector(".notification-message");
 let errorMessage = document.querySelector(".error-message");
+let deleteBtn = document.querySelector(".delete-account");
+
+let popup = document.querySelector(".pop-up");
+let popup_confirmBtn = document.querySelector(".pop-up .confirm");
+let popup_cancelBtn = document.querySelector(".pop-up .cancel");
+
+deleteBtn.addEventListener("click", () => {
+    console.log("deleteBtn clicked");
+    popup.style.display = "block";
+});
+
+popup.addEventListener("click", () => {
+    console.log("popup BG clicked");
+    popup.style.display = "none";
+});
 
 form.addEventListener("submit", (e) => {
     // if the form gets submitted, then page doesn't refresh
@@ -54,5 +69,4 @@ form.addEventListener("submit", (e) => {
             }
         }
     }
-
 });

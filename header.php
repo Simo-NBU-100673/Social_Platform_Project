@@ -20,4 +20,7 @@
 
     <!--Style sheet for myprofile_settings.php-->
     <link rel="stylesheet" href="styles/myprofile_settings.css">
+
+    <!--Style sheet for myprofile_settings.php-->
+    <link rel="stylesheet" href="styles/pop_up.css">
 </head>
