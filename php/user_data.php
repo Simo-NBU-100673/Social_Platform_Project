@@ -31,7 +31,7 @@
 
       //if the last message is longer than 28 characters then we cut it
       if(strlen($last_message) > 28){
-        $last_message = substr($last_message, 0, 28) . "...";
+        $last_message = mb_substr($last_message, 0, 28) . "...";
       }
 
       //if the user is online then we make the dot green
